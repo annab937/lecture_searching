@@ -1,8 +1,6 @@
 from pathlib import Path
 import json
 
-
-
 def read_data(file_name, field):
     cwd_path = Path.cwd()
     file_path = cwd_path / file_name
@@ -14,7 +12,6 @@ def read_data(file_name, field):
         return data[field]
     else:
         return None
-
 
 def linear_search(searched_data, searched_number):
     idx = 0
@@ -39,23 +36,17 @@ def binary_search(searched_data, searched_number):
             return mid
         elif searched_data[mid] < searched_number:
             left = mid + 1
-        else:
-             right = mid - 1
-    return left
-    
+        elif searched_data[mid] > searched_number:
+            right = mid - 1
+    return None
 
-
-
-
-
-    return idx
 
 def main():
     my_data = read_data("sequential.json", "unordered_numbers")
     print(my_data)
     found_number = linear_search(my_data, 37)
     print(found_number)
-    found_number_bin = binary_search(my_data, 45)
+    found_number_bin = binary_search(my_data, 24)
     print(found_number_bin)
 
 
