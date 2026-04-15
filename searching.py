@@ -62,7 +62,8 @@ def test_complexity(list_of_n):
         found_number = binary_search(ordered_data,)
 
 
-def pattern_search():
+def pattern_search(sequence, pattern):
+    positions = set()
 
 
 
